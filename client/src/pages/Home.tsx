@@ -37,6 +37,7 @@ import teamMember4 from "@/assets/images/team-member-4.png";
 import fatimaImg from "@assets/image_1771776205557.png";
 import fatimaMasoodImg from "@assets/image_1771777254063.png";
 import ayeshaImg from "@assets/image_1771776900297.png";
+import bilalImg from "@assets/image_1771777520507.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -355,8 +356,8 @@ export default function Home() {
                 name: "Bilal Ahmed",
                 role: "Data Analyst",
                 bio: "Ensures 95%+ data accuracy through rigorous verification protocols.",
-                img: teamMember3,
-                positionClass: "object-center"
+                img: bilalImg,
+                positionClass: "object-[center_10%]"
               },
               {
                 name: "Ayesha Malik",
