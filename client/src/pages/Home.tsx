@@ -11,7 +11,8 @@ import {
   MessageSquare,
   Building2,
   Mail,
-  Phone
+  Phone,
+  Camera
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,6 +24,9 @@ import imgTeam1 from "@assets/Imagine_prompt_paste_202601310038_1771770412415.jp
 import imgTeam2 from "@assets/WhatsApp_Image_2026-02-22_at_4.47.50_AM_1771770412417.jpeg";
 import imgTeam3 from "@assets/WhatsApp_Image_2026-01-10_at_11.31.08_PM_1771770412416.jpeg";
 import imgTeam4 from "@assets/WhatsApp_Image_2026-02-21_at_2.36.53_PM_1771770431238.jpeg";
+import officeImg1 from "@/assets/images/office-workspace_1.jpg";
+import officeImg2 from "@/assets/images/office-workspace_2.jpg";
+import officeImg3 from "@/assets/images/office-workspace_3.jpg";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -267,25 +271,25 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Michael Reed",
+                name: "Muhammad Ali baig",
                 role: "CEO & Founder",
                 bio: "10+ years driving B2B growth and scaling data-driven sales strategies globally.",
                 img: imgTeam1
               },
               {
-                name: "David Chen",
+                name: "Ghufran Aziz",
                 role: "Head of Data Solutions",
                 bio: "Expert in prospect research, automation, and high-accuracy email list building.",
                 img: imgTeam2
               },
               {
-                name: "Sarah Jenkins",
+                name: "Rimsha Shamsheer",
                 role: "VP of Client Success",
                 bio: "Ensures our clients receive maximum ROI and dedicated support from our programs.",
                 img: imgTeam3
               },
               {
-                name: "Omar Hassan",
+                name: "Muhammad Moeen Baig",
                 role: "Lead Gen Specialist",
                 bio: "Master of LinkedIn Sales Navigator and crafting personalized outreach campaigns.",
                 img: imgTeam4
@@ -319,6 +323,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* OFFICE GALLERY SECTION */}
+      <section className="py-24 bg-secondary/30 border-b border-border/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">Inside Our Workspace</h2>
+            <p className="text-lg text-muted-foreground">
+              A glimpse into our state-of-the-art office where our dedicated team drives your success.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[officeImg1, officeImg2, officeImg3].map((img, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="rounded-3xl overflow-hidden aspect-[4/3] relative group shadow-sm border border-border/50"
+              >
+                <img src={img} alt={`Office Workspace ${i + 1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Camera className="text-white w-8 h-8 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 delay-100" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT SECTION */}
       <section id="contact" className="py-24">
         <div className="container mx-auto px-4 md:px-6">
@@ -340,7 +374,7 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-muted-foreground mb-1">WhatsApp / Phone</div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">WhatsApp</div>
                     <div className="font-semibold text-lg">+1 (548) 314-8589</div>
                   </div>
                 </div>
