@@ -35,7 +35,7 @@ import teamMember2 from "@/assets/images/team-member-2.png";
 import teamMember3 from "@/assets/images/team-member-3.png";
 import teamMember4 from "@/assets/images/team-member-4.png";
 import fatimaImg from "@assets/image_1771776205557.png";
-import fatimaMasoodImg from "@assets/image_1771777254063.png";
+import fatimaMasoodImg from "@assets/image_1771778880115.png";
 import ayeshaImg from "@assets/image_1771776900297.png";
 import bilalImg from "@assets/image_1771777520507.png";
 
@@ -360,7 +360,7 @@ export default function Home() {
                 positionClass: "object-[center_10%]"
               },
               {
-                name: "Ayesha Malik",
+                name: "Maleeha Hameed",
                 role: "Client Success Manager",
                 bio: "Dedicated to driving measurable growth and seamless communication.",
                 img: ayeshaImg,
