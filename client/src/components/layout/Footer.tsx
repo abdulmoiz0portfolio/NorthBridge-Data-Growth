@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import logoImg from "@assets/upscalemedia-transformed_(2)_1771773873292.png";
 
 export default function Footer() {
   return (
@@ -6,13 +7,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center font-bold text-lg leading-none">
-                N
-              </div>
-              <span className="font-display font-bold text-xl tracking-tight">
-                NorthBridge Data Solutions
-              </span>
+            <div className="mb-6">
+              <img src={logoImg} alt="NorthBridge Data Solutions" className="h-16 bg-white rounded-xl px-4 py-2" />
             </div>
             <p className="text-primary-foreground/70 max-w-sm mb-6 leading-relaxed">
               We empower B2B and B2C organizations with accurate data, targeted prospect lists, and comprehensive virtual assistance to drive real growth.
@@ -50,7 +46,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-white/50 shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/70">Global Operations</span>
+                <span className="text-primary-foreground/70">1 World Trade Center, Suite 8500<br/>New York, NY 10007, USA</span>
               </li>
             </ul>
           </div>

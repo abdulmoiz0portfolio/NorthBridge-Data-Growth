@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImg from "@assets/upscalemedia-transformed_(2)_1771773873292.png";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,15 +40,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/">
             <a className="flex items-center gap-2 group" data-testid="link-home">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg leading-none group-hover:scale-105 transition-transform">
-                N
-              </div>
-              <span className="font-display font-bold text-xl tracking-tight text-foreground hidden sm:inline-block">
-                NorthBridge Data Solutions
-              </span>
-              <span className="font-display font-bold text-xl tracking-tight text-foreground sm:hidden">
-                NorthBridge
-              </span>
+              <img src={logoImg} alt="NorthBridge Data Solutions" className="h-14 mix-blend-multiply" />
             </a>
           </Link>
 

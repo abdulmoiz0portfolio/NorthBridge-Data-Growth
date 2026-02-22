@@ -13,7 +13,8 @@ import {
   Mail,
   Phone,
   Camera,
-  Hexagon
+  Hexagon,
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -387,6 +388,16 @@ export default function Home() {
               </p>
 
               <div className="space-y-6">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 border border-border/50">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Office Address</div>
+                    <div className="font-semibold">1 World Trade Center, Suite 8500<br/>New York, NY 10007, USA</div>
+                  </div>
+                </div>
+
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 border border-border/50">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-primary" />
