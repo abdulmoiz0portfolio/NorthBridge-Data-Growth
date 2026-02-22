@@ -35,6 +35,7 @@ import teamMember2 from "@/assets/images/team-member-2.png";
 import teamMember3 from "@/assets/images/team-member-3.png";
 import teamMember4 from "@/assets/images/team-member-4.png";
 import fatimaImg from "@assets/image_1771776205557.png";
+import fatimaMasoodImg from "@assets/image_1771777115948.png";
 import ayeshaImg from "@assets/image_1771776900297.png";
 
 const fadeIn = {
@@ -344,11 +345,11 @@ export default function Home() {
                 positionClass: "object-center"
               },
               {
-                name: "Fatima Khan",
+                name: "Fatima Masood",
                 role: "LinkedIn Strategist",
                 bio: "Expert in Social Selling and LinkedIn Sales Navigator optimization.",
-                img: fatimaImg,
-                positionClass: "object-[center_20%] scale-[1.2]"
+                img: fatimaMasoodImg,
+                positionClass: "object-[center_20%] scale-[1.8]"
               },
               {
                 name: "Bilal Ahmed",
