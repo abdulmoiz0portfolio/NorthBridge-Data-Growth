@@ -23,6 +23,7 @@ import { Label } from "@/components/ui/label";
 
 // Assets
 import imgTeam1 from "@assets/Imagine_prompt_paste_202601310038_1771770412415.jpeg";
+import imgTeam1New from "@assets/Imagine_prompt_paste_202601310038_1771780045984.jpeg";
 import imgTeam2 from "@assets/WhatsApp_Image_2026-02-22_at_4.47.50_AM_1771770412417.jpeg";
 import imgTeam3 from "@assets/WhatsApp_Image_2026-01-10_at_11.31.08_PM_1771770412416.jpeg";
 import imgTeam4 from "@assets/WhatsApp_Image_2026-02-21_at_2.36.53_PM_1771770431238.jpeg";
@@ -322,8 +323,8 @@ export default function Home() {
                 name: "Muhammad Ali baig",
                 role: "CEO & Founder",
                 bio: "10+ years driving B2B growth and scaling data-driven sales strategies globally.",
-                img: imgTeam1,
-                positionClass: "object-contain scale-[0.85]"
+                img: imgTeam1New,
+                positionClass: "object-center"
               },
               {
                 name: "Ghufran Aziz",
