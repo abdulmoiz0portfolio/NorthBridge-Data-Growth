@@ -271,6 +271,12 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
+                name: "Muhammad Moeen Baig",
+                role: "Owner",
+                bio: "Master of LinkedIn Sales Navigator and crafting personalized outreach campaigns.",
+                img: imgTeam4
+              },
+              {
                 name: "Muhammad Ali baig",
                 role: "CEO & Founder",
                 bio: "10+ years driving B2B growth and scaling data-driven sales strategies globally.",
@@ -287,12 +293,6 @@ export default function Home() {
                 role: "VP of Client Success",
                 bio: "Ensures our clients receive maximum ROI and dedicated support from our programs.",
                 img: imgTeam3
-              },
-              {
-                name: "Muhammad Moeen Baig",
-                role: "Owner",
-                bio: "Master of LinkedIn Sales Navigator and crafting personalized outreach campaigns.",
-                img: imgTeam4
               }
             ].map((member, i) => (
               <motion.div 
