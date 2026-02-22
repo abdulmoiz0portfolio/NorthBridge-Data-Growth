@@ -39,8 +39,11 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-2 group" data-testid="link-home">
+            <a className="flex items-center gap-3 group" data-testid="link-home">
               <img src={logoImg} alt="NorthBridge Data Solutions" className="h-14" />
+              <span className="font-display font-bold text-lg md:text-xl tracking-tight text-foreground whitespace-nowrap hidden sm:block">
+                NORTHBRIDGE DATA SOLUTIONS
+              </span>
             </a>
           </Link>
 

@@ -7,8 +7,11 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <div className="mb-6">
+            <div className="mb-6 flex items-center gap-3">
               <img src={logoImg} alt="NorthBridge Data Solutions" className="h-16 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+              <span className="font-display font-bold text-xl tracking-tight text-white drop-shadow-sm">
+                NORTHBRIDGE DATA SOLUTIONS
+              </span>
             </div>
             <p className="text-primary-foreground/70 max-w-sm mb-6 leading-relaxed">
               We empower B2B and B2C organizations with accurate data, targeted prospect lists, and comprehensive virtual assistance to drive real growth.
