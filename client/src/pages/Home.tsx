@@ -349,7 +349,7 @@ export default function Home() {
                 role: "LinkedIn Strategist",
                 bio: "Expert in Social Selling and LinkedIn Sales Navigator optimization.",
                 img: fatimaMasoodImg,
-                positionClass: "object-[center_20%] scale-[1.8]"
+                positionClass: "object-[center_20%] scale-[1.4]"
               },
               {
                 name: "Bilal Ahmed",
