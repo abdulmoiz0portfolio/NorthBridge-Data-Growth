@@ -25,9 +25,9 @@ import imgTeam1 from "@assets/Imagine_prompt_paste_202601310038_1771770412415.jp
 import imgTeam2 from "@assets/WhatsApp_Image_2026-02-22_at_4.47.50_AM_1771770412417.jpeg";
 import imgTeam3 from "@assets/WhatsApp_Image_2026-01-10_at_11.31.08_PM_1771770412416.jpeg";
 import imgTeam4 from "@assets/WhatsApp_Image_2026-02-21_at_2.36.53_PM_1771770431238.jpeg";
-import officeImg1 from "@/assets/images/office-workspace_1.jpg";
-import officeImg2 from "@/assets/images/office-workspace_2.jpg";
-import officeImg3 from "@/assets/images/office-workspace_3.jpg";
+import officeImg1 from "@assets/Screenshot_2026-02-22_201649_1771773446554.png";
+import officeImg2 from "@assets/Screenshot_2026-02-22_201916_1771773756968.png";
+import officeImg3 from "@assets/Screenshot_2026-02-22_202208_1771773756969.png";
 import heroIllustration from "@/assets/images/hero-illustration.png";
 
 const fadeIn = {
@@ -289,7 +289,7 @@ export default function Home() {
                 role: "Owner",
                 bio: "Master of LinkedIn Sales Navigator and crafting personalized outreach campaigns.",
                 img: imgTeam4,
-                positionClass: "object-[center_15%]"
+                positionClass: "object-[center_20%]"
               },
               {
                 name: "Muhammad Ali baig",
