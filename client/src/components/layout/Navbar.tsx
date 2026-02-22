@@ -42,7 +42,10 @@ export default function Navbar() {
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg leading-none group-hover:scale-105 transition-transform">
                 N
               </div>
-              <span className="font-display font-bold text-xl tracking-tight text-foreground">
+              <span className="font-display font-bold text-xl tracking-tight text-foreground hidden sm:inline-block">
+                NorthBridge Data Solutions
+              </span>
+              <span className="font-display font-bold text-xl tracking-tight text-foreground sm:hidden">
                 NorthBridge
               </span>
             </a>

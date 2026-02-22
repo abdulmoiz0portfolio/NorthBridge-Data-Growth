@@ -79,10 +79,10 @@ export default function Home() {
               
               <div className="relative">
                 <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-bold font-display text-foreground leading-[1.05] tracking-tight mb-6 relative z-10">
-                  Accurate Data.<br />
-                  Qualified Leads.<br />
+                  Accurate Data,<br />
+                  Qualified Leads,<br />
                   <span className="text-primary relative inline-block mt-2">
-                    Real Growth.
+                    Real Growth
                     <svg className="absolute -bottom-2 w-full h-3 text-accent" viewBox="0 0 100 10" preserveAspectRatio="none">
                       <path d="M0,5 Q50,10 100,5" stroke="currentColor" strokeWidth="2" fill="none" />
                     </svg>
@@ -196,7 +196,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
-                Why Industry Leaders Choose NorthBridge
+                Why Industry Leaders Choose NorthBridge Data Solutions
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 We don't just provide lists; we provide growth engines. Our rigorous data validation processes ensure your sales team spends time selling, not searching.
