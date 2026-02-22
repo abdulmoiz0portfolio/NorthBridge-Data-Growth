@@ -62,31 +62,42 @@ function Counter({ target }: { target: number }) {
 
   useEffect(() => {
     let startTime: number | null = null;
+    let lastTick = 0;
+    let currentCount = 0;
+    let animationFrameId: number;
     const duration = 2500; // 2.5 seconds
 
     const animateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
+      const elapsed = timestamp - startTime;
       
-      // easeOutQuart for smooth deceleration
-      const easeOutQuart = 1 - Math.pow(1 - Math.min(progress / duration, 1), 4);
-      const current = Math.floor(easeOutQuart * target);
-      
-      setCount(current);
-      
-      if (progress < duration) {
-        requestAnimationFrame(animateCount);
+      if (elapsed < duration) {
+        // easeOutQuart for smooth deceleration
+        const progress = elapsed / duration;
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        currentCount = Math.floor(easeOutQuart * target);
+        setCount(currentCount);
       } else {
-        setCount(target);
+        // Continuous fast counter after reaching the target
+        if (timestamp - lastTick > 30) { // Every 30ms
+          currentCount += Math.floor(Math.random() * 12) + 3; // Add 3-14
+          setCount(currentCount);
+          lastTick = timestamp;
+        }
       }
+      
+      animationFrameId = requestAnimationFrame(animateCount);
     };
     
     // Start animation slightly delayed so it's visible when scrolled to
     const timeout = setTimeout(() => {
-      requestAnimationFrame(animateCount);
+      animationFrameId = requestAnimationFrame(animateCount);
     }, 500);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
   }, [target]);
 
   return <span>{count.toLocaleString()}</span>;
