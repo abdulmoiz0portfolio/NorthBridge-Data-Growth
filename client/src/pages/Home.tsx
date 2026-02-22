@@ -1,0 +1,405 @@
+import { motion } from "framer-motion";
+import { 
+  ArrowRight, 
+  Target, 
+  Users, 
+  Database, 
+  Keyboard, 
+  BarChart3, 
+  ShieldCheck, 
+  CheckCircle2, 
+  MessageSquare,
+  Building2,
+  Mail,
+  Phone
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+
+// Assets
+import imgTeam1 from "@assets/Imagine_prompt_paste_202601310038_1771770412415.jpeg";
+import imgTeam2 from "@assets/WhatsApp_Image_2026-02-22_at_4.47.50_AM_1771770412417.jpeg";
+import imgTeam3 from "@assets/WhatsApp_Image_2026-01-10_at_11.31.08_PM_1771770412416.jpeg";
+import imgTeam4 from "@assets/WhatsApp_Image_2026-02-21_at_2.36.53_PM_1771770431238.jpeg";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+export default function Home() {
+  return (
+    <div className="w-full">
+      {/* HERO SECTION */}
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-[90vh]">
+        {/* Background Grid & Gradient */}
+        <div className="absolute inset-0 bg-grid-pattern z-0" />
+        <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0" />
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-primary font-medium text-sm mb-6 border border-primary/10">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                Premium B2B Data Partner
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold font-display text-foreground leading-[1.1] tracking-tight mb-6">
+                Accurate Data.<br />
+                Qualified Leads.<br />
+                <span className="text-primary relative inline-block">
+                  Real Growth.
+                  <svg className="absolute -bottom-2 w-full h-3 text-accent" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0,5 Q50,10 100,5" stroke="currentColor" strokeWidth="2" fill="none" />
+                  </svg>
+                </span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+                We help businesses scale predictably through meticulously verified leads, targeted prospect research, and expert data solutions.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button size="lg" className="rounded-full px-8 h-14 text-base shadow-lg shadow-primary/20 group w-full sm:w-auto" asChild>
+                  <a href="#contact" data-testid="button-hero-cta">
+                    Book a Free Consultation
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base w-full sm:w-auto" asChild>
+                  <a href="#services" data-testid="button-hero-services">Explore Services</a>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES SECTION */}
+      <section id="services" className="py-24 bg-secondary/50 border-y border-border/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">Our Core Services</h2>
+            <p className="text-lg text-muted-foreground">
+              End-to-end data and outreach solutions tailored to fill your sales pipeline.
+            </p>
+          </div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {/* Service 1 */}
+            <motion.div variants={fadeIn} className="bg-card rounded-3xl p-8 shadow-sm border border-border/50 hover:shadow-md transition-all group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110" />
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary relative z-10">
+                <Target className="w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-bold font-display mb-3 relative z-10">Lead Generation</h3>
+              <p className="text-muted-foreground mb-6 relative z-10">
+                Strategic B2B & B2C lead generation, detailed prospect research, and comprehensive email list building & verification to ensure high deliverability.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {['B2B & B2C Campaigns', 'Email Verification', 'Custom Prospect Lists'].map((item, i) => (
+                  <li key={i} className="flex items-center text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-primary mr-2" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Service 2 */}
+            <motion.div variants={fadeIn} className="bg-card rounded-3xl p-8 shadow-sm border border-border/50 hover:shadow-md transition-all group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110" />
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 text-accent relative z-10">
+                <Users className="w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-bold font-display mb-3 relative z-10">LinkedIn Services</h3>
+              <p className="text-muted-foreground mb-6 relative z-10">
+                Mastering LinkedIn Sales Navigator to identify key decision-makers, craft personalized outreach, and build meaningful B2B connections.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {['Sales Navigator Mastery', 'Profile Optimization', 'Outreach Automation'].map((item, i) => (
+                  <li key={i} className="flex items-center text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-accent mr-2" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Service 3 */}
+            <motion.div variants={fadeIn} className="bg-card rounded-3xl p-8 shadow-sm border border-border/50 hover:shadow-md transition-all group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110" />
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary relative z-10">
+                <Keyboard className="w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-bold font-display mb-3 relative z-10">Data Entry & VA</h3>
+              <p className="text-muted-foreground mb-6 relative z-10">
+                Reliable data entry and dedicated virtual assistance services to handle your administrative operations so you can focus on closing deals.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {['CRM Management', 'Data Cleansing', 'Administrative Support'].map((item, i) => (
+                  <li key={i} className="flex items-center text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-primary mr-2" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section id="why-us" className="py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
+                Why Industry Leaders Choose NorthBridge
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                We don't just provide lists; we provide growth engines. Our rigorous data validation processes ensure your sales team spends time selling, not searching.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-6">
+                {[
+                  { icon: ShieldCheck, title: "Verified Accuracy", desc: "95%+ deliverability guarantee on all data." },
+                  { icon: Target, title: "Hyper-Targeted", desc: "Granular filtering for ideal buyer profiles." },
+                  { icon: BarChart3, title: "Scalable Output", desc: "From startup batches to enterprise volumes." },
+                  { icon: Database, title: "Clean & Formatted", desc: "Ready-to-import data for any CRM." }
+                ].map((feature, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                      <feature.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-1">{feature.title}</h4>
+                      <p className="text-sm text-muted-foreground">{feature.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="lg:w-1/2 relative w-full">
+              <div className="aspect-square md:aspect-[4/3] rounded-[2rem] bg-secondary border border-border/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-multiply" />
+                
+                {/* Mockup UI representation instead of a plain image */}
+                <div className="absolute inset-8 rounded-xl bg-card shadow-2xl border border-border/50 flex flex-col overflow-hidden">
+                  <div className="h-12 border-b flex items-center px-4 gap-2 bg-secondary/50">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-400" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                      <div className="w-3 h-3 rounded-full bg-green-400" />
+                    </div>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col gap-4">
+                    <div className="flex justify-between items-center pb-4 border-b">
+                      <div>
+                        <div className="text-sm font-medium text-muted-foreground">Total Leads Verified</div>
+                        <div className="text-3xl font-bold font-display">124,592</div>
+                      </div>
+                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                        <CheckCircle2 className="w-6 h-6 text-green-600" />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3 pt-2">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-secondary/50">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                              <Building2 className="w-4 h-4 text-primary" />
+                            </div>
+                            <div>
+                              <div className="h-4 w-24 bg-foreground/20 rounded mb-1" />
+                              <div className="h-3 w-32 bg-foreground/10 rounded" />
+                            </div>
+                          </div>
+                          <div className="h-6 w-16 bg-green-100 rounded text-[10px] text-green-700 font-bold flex items-center justify-center uppercase tracking-wider">
+                            Verified
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM SECTION */}
+      <section id="team" className="py-24 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 text-white">Meet Our Experts</h2>
+            <p className="text-lg text-primary-foreground/80">
+              The dedicated professionals driving data quality and lead generation strategies for our clients.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: "Michael Reed",
+                role: "CEO & Founder",
+                bio: "10+ years driving B2B growth and scaling data-driven sales strategies globally.",
+                img: imgTeam1
+              },
+              {
+                name: "David Chen",
+                role: "Head of Data Solutions",
+                bio: "Expert in prospect research, automation, and high-accuracy email list building.",
+                img: imgTeam2
+              },
+              {
+                name: "Sarah Jenkins",
+                role: "VP of Client Success",
+                bio: "Ensures our clients receive maximum ROI and dedicated support from our programs.",
+                img: imgTeam3
+              },
+              {
+                name: "Omar Hassan",
+                role: "Lead Gen Specialist",
+                bio: "Master of LinkedIn Sales Navigator and crafting personalized outreach campaigns.",
+                img: imgTeam4
+              }
+            ].map((member, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="flex flex-col items-center text-center group"
+                data-testid={`card-team-${i}`}
+              >
+                <div className="w-40 h-40 rounded-full border-4 border-white/10 overflow-hidden mb-6 relative group-hover:border-white/30 transition-colors">
+                  <img 
+                    src={member.img} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 transition-opacity duration-300 mix-blend-overlay" />
+                </div>
+                <h3 className="text-xl font-bold font-display text-white mb-1">{member.name}</h3>
+                <p className="text-accent font-medium mb-3">{member.role}</p>
+                <p className="text-sm text-primary-foreground/70 leading-relaxed">
+                  {member.bio}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section id="contact" className="py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-primary font-medium text-sm mb-6 border border-primary/10">
+                Let's Talk
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+                Ready to scale your pipeline?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10">
+                Contact us today for a free consultation. We'll analyze your current processes and build a custom data strategy for your specific niche.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 border border-border/50">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">WhatsApp / Phone</div>
+                    <div className="font-semibold text-lg">+1 (548) 314-8589</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 border border-border/50">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Email Support</div>
+                    <div className="font-semibold">contact.northbridgesolution@gmail.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-card rounded-[2rem] p-8 md:p-10 shadow-xl border border-border/50">
+              <h3 className="text-2xl font-bold font-display mb-6">Send us a message</h3>
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="first-name">First Name</Label>
+                    <Input id="first-name" placeholder="John" className="h-12 bg-secondary/50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="last-name">Last Name</Label>
+                    <Input id="last-name" placeholder="Doe" className="h-12 bg-secondary/50" />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="email">Work Email</Label>
+                  <Input id="email" type="email" placeholder="john@company.com" className="h-12 bg-secondary/50" />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="company">Company Name</Label>
+                  <Input id="company" placeholder="Acme Corp" className="h-12 bg-secondary/50" />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">How can we help?</Label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Tell us about your lead generation goals..." 
+                    className="min-h-[120px] bg-secondary/50 resize-none"
+                  />
+                </div>
+
+                <Button type="submit" className="w-full h-12 text-base rounded-xl" data-testid="button-submit-contact">
+                  Send Message
+                  <MessageSquare className="w-4 h-4 ml-2" />
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
