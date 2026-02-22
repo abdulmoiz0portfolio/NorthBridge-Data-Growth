@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
@@ -55,6 +56,41 @@ const staggerContainer = {
     }
   }
 };
+
+function Counter({ target }: { target: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number | null = null;
+    const duration = 2500; // 2.5 seconds
+
+    const animateCount = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      
+      // easeOutQuart for smooth deceleration
+      const easeOutQuart = 1 - Math.pow(1 - Math.min(progress / duration, 1), 4);
+      const current = Math.floor(easeOutQuart * target);
+      
+      setCount(current);
+      
+      if (progress < duration) {
+        requestAnimationFrame(animateCount);
+      } else {
+        setCount(target);
+      }
+    };
+    
+    // Start animation slightly delayed so it's visible when scrolled to
+    const timeout = setTimeout(() => {
+      requestAnimationFrame(animateCount);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [target]);
+
+  return <span>{count.toLocaleString()}</span>;
+}
 
 export default function Home() {
   return (
@@ -333,44 +369,63 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="p-6 flex-1 flex flex-col gap-4">
-                    <div className="flex justify-between items-center pb-4 border-b">
+                    <div className="flex justify-between items-start pb-4 border-b">
                       <div>
-                        <div className="text-sm font-medium text-muted-foreground">Total Leads Verified</div>
-                        <div className="text-3xl font-bold font-display">124,592</div>
+                        <div className="text-sm font-medium text-muted-foreground mb-1">Total Leads Verified</div>
+                        <div className="text-4xl font-bold font-display tracking-tight flex items-baseline">
+                          <Counter target={124592} />+
+                        </div>
+                        <div className="text-sm font-medium text-foreground mt-2">
+                          Successfully Researched, Cleaned & Delivered Across Multiple Industries
+                        </div>
+                        <div className="text-xs text-muted-foreground mt-1">
+                          Helping B2B companies scale with accurate, decision-maker-level data.
+                        </div>
                       </div>
-                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center shrink-0">
                         <CheckCircle2 className="w-6 h-6 text-green-600" />
                       </div>
                     </div>
                     
                     <div className="space-y-3 pt-2">
                       {[
-                        { width1: "w-24", width2: "w-32", width3: "w-20", width4: "w-28" },
-                        { width1: "w-28", width2: "w-36", width3: "w-24", width4: "w-32" },
-                        { width1: "w-20", width2: "w-28", width3: "w-16", width4: "w-24" },
-                        { width1: "w-32", width2: "w-40", width3: "w-24", width4: "w-36" }
+                        {
+                          category: "SaaS Companies",
+                          count: "32,450 Leads",
+                          details: "Email Verified & Cleaned"
+                        },
+                        {
+                          category: "E-commerce Brands",
+                          count: "28,300 Leads",
+                          details: "Contact & Decision Maker Verified"
+                        },
+                        {
+                          category: "Marketing Agencies",
+                          count: "41,120 Leads",
+                          details: "Prospect Researched & Validated"
+                        },
+                        {
+                          category: "Recruitment Firms",
+                          count: "22,722 Leads",
+                          details: "Fully Verified & CRM Ready"
+                        }
                       ].map((item, i) => (
-                        <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-secondary/50">
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                              <Building2 className="w-4 h-4 text-primary" />
+                        <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-secondary/50 hover:bg-secondary/80 transition-colors">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                              <Building2 className="w-5 h-5 text-primary" />
                             </div>
                             <div>
-                              <div className={`h-4 ${item.width1} bg-foreground/20 rounded mb-1`} />
-                              <div className={`h-3 ${item.width2} bg-foreground/10 rounded`} />
+                              <div className="font-semibold text-foreground text-sm">{item.category}</div>
+                              <div className="flex flex-col xl:flex-row xl:items-center text-xs text-muted-foreground mt-0.5 gap-1 xl:gap-2">
+                                <span className="font-medium text-primary">{item.count}</span>
+                                <span className="hidden xl:block w-1 h-1 rounded-full bg-border/80" />
+                                <span>{item.details}</span>
+                              </div>
                             </div>
                           </div>
                           
-                          <div className="hidden sm:block">
-                            <div className={`h-3 ${item.width3} bg-foreground/15 rounded mb-1.5`} />
-                            <div className={`h-3 ${item.width4} bg-foreground/10 rounded`} />
-                          </div>
-                          
-                          <div className="hidden md:block">
-                            <div className="h-3 w-16 bg-foreground/10 rounded-full" />
-                          </div>
-
-                          <div className="h-6 px-2 bg-green-100 rounded text-[10px] text-green-700 font-bold flex items-center justify-center uppercase tracking-wider shrink-0">
+                          <div className="h-6 px-2.5 bg-green-100 rounded text-[10px] text-green-700 font-bold flex items-center justify-center uppercase tracking-wider shrink-0 shadow-sm border border-green-200/50">
                             <CheckCircle2 className="w-3 h-3 mr-1" />
                             Verified
                           </div>
