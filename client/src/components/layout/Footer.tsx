@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-white/50 shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/70">+1 (548) 314-8589 (WhatsApp)</span>
+                <a href="https://wa.link/parbtx" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-white transition-colors">+1 (548) 314-8589 (WhatsApp)</a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-white/50 shrink-0 mt-0.5" />

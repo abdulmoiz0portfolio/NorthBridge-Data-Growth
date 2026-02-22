@@ -730,7 +730,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 border border-border/50">
+                <a href="https://wa.link/parbtx" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 border border-border/50 hover:bg-secondary/80 transition-colors cursor-pointer">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
@@ -738,7 +738,7 @@ export default function Home() {
                     <div className="text-sm font-medium text-muted-foreground mb-1">WhatsApp</div>
                     <div className="font-semibold text-lg">+1 (548) 314-8589</div>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 border border-border/50">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
