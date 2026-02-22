@@ -38,6 +38,7 @@ import fatimaImg from "@assets/image_1771776205557.png";
 import fatimaMasoodImg from "@assets/image_1771778880115.png";
 import ayeshaImg from "@assets/image_1771776900297.png";
 import bilalImg from "@assets/image_1771777520507.png";
+import wardaImg from "@assets/image_1771779818555.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -64,7 +65,7 @@ export default function Home() {
         <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0" />
         
         {/* Subtle Animated Office Images Background */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.07] grayscale mix-blend-multiply">
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.2] grayscale mix-blend-multiply">
           <motion.img 
             src={officeImg1} 
             animate={{ x: [-20, 20, -20], y: [-20, 20, -20], rotate: [-2, 2, -2] }}
@@ -322,7 +323,7 @@ export default function Home() {
                 role: "CEO & Founder",
                 bio: "10+ years driving B2B growth and scaling data-driven sales strategies globally.",
                 img: imgTeam1,
-                positionClass: "object-center"
+                positionClass: "object-contain scale-[0.85]"
               },
               {
                 name: "Ghufran Aziz",
@@ -339,11 +340,11 @@ export default function Home() {
                 positionClass: "object-center"
               },
               {
-                name: "Tariq Mahmood",
+                name: "Warda Akhter",
                 role: "Lead Generation Specialist",
                 bio: "Specializes in B2B outbound strategies and highly targeted lead lists.",
-                img: teamMember1,
-                positionClass: "object-center"
+                img: wardaImg,
+                positionClass: "object-cover scale-[1.1]"
               },
               {
                 name: "Fatima Masood",
