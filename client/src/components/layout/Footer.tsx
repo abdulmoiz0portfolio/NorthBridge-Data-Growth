@@ -1,5 +1,5 @@
 import { Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
-import logoImg from "@assets/upscalemedia-transformed_(2)_1771773873292.png";
+import logoImg from "@/assets/images/logo-transparent.png";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <div className="mb-6">
-              <img src={logoImg} alt="NorthBridge Data Solutions" className="h-16 bg-white rounded-xl px-4 py-2" />
+              <img src={logoImg} alt="NorthBridge Data Solutions" className="h-16 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
             </div>
             <p className="text-primary-foreground/70 max-w-sm mb-6 leading-relaxed">
               We empower B2B and B2C organizations with accurate data, targeted prospect lists, and comprehensive virtual assistance to drive real growth.
