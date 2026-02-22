@@ -344,18 +344,34 @@ export default function Home() {
                     </div>
                     
                     <div className="space-y-3 pt-2">
-                      {[1, 2, 3, 4].map((i) => (
+                      {[
+                        { width1: "w-24", width2: "w-32", width3: "w-20", width4: "w-28" },
+                        { width1: "w-28", width2: "w-36", width3: "w-24", width4: "w-32" },
+                        { width1: "w-20", width2: "w-28", width3: "w-16", width4: "w-24" },
+                        { width1: "w-32", width2: "w-40", width3: "w-24", width4: "w-36" }
+                      ].map((item, i) => (
                         <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-secondary/50">
                           <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                               <Building2 className="w-4 h-4 text-primary" />
                             </div>
                             <div>
-                              <div className="h-4 w-24 bg-foreground/20 rounded mb-1" />
-                              <div className="h-3 w-32 bg-foreground/10 rounded" />
+                              <div className={`h-4 ${item.width1} bg-foreground/20 rounded mb-1`} />
+                              <div className={`h-3 ${item.width2} bg-foreground/10 rounded`} />
                             </div>
                           </div>
-                          <div className="h-6 w-16 bg-green-100 rounded text-[10px] text-green-700 font-bold flex items-center justify-center uppercase tracking-wider">
+                          
+                          <div className="hidden sm:block">
+                            <div className={`h-3 ${item.width3} bg-foreground/15 rounded mb-1.5`} />
+                            <div className={`h-3 ${item.width4} bg-foreground/10 rounded`} />
+                          </div>
+                          
+                          <div className="hidden md:block">
+                            <div className="h-3 w-16 bg-foreground/10 rounded-full" />
+                          </div>
+
+                          <div className="h-6 px-2 bg-green-100 rounded text-[10px] text-green-700 font-bold flex items-center justify-center uppercase tracking-wider shrink-0">
+                            <CheckCircle2 className="w-3 h-3 mr-1" />
                             Verified
                           </div>
                         </div>
