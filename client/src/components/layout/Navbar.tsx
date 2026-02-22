@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/images/logo-transparent.png";
 
@@ -50,14 +51,16 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors inline-block"
                 data-testid={`link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
                 {link.name}
-              </a>
+              </motion.a>
             ))}
             <Button asChild className="rounded-full px-6 shadow-sm group">
               <a href="#contact" data-testid="button-nav-contact">

@@ -356,7 +356,11 @@ export default function Home() {
             </div>
             
             <div className="lg:w-1/2 relative w-full">
-              <div className="aspect-square md:aspect-[4/3] rounded-[2rem] bg-secondary border border-border/50 relative overflow-hidden">
+              <motion.div 
+                className="aspect-square md:aspect-[4/3] rounded-[2rem] bg-secondary border border-border/50 relative overflow-hidden"
+                animate={{ scale: [1, 1.03, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-multiply" />
                 
                 {/* Mockup UI representation instead of a plain image */}
@@ -434,7 +438,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
