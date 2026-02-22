@@ -324,7 +324,7 @@ export default function Home() {
                 role: "CEO & Founder",
                 bio: "10+ years driving B2B growth and scaling data-driven sales strategies globally.",
                 img: imgTeam1New,
-                positionClass: "object-center"
+                positionClass: "object-top"
               },
               {
                 name: "Ghufran Aziz",
