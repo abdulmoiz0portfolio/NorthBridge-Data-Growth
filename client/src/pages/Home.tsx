@@ -288,25 +288,29 @@ export default function Home() {
                 name: "Muhammad Moeen Baig",
                 role: "Owner",
                 bio: "Master of LinkedIn Sales Navigator and crafting personalized outreach campaigns.",
-                img: imgTeam4
+                img: imgTeam4,
+                positionClass: "object-[center_15%]"
               },
               {
                 name: "Muhammad Ali baig",
                 role: "CEO & Founder",
                 bio: "10+ years driving B2B growth and scaling data-driven sales strategies globally.",
-                img: imgTeam1
+                img: imgTeam1,
+                positionClass: "object-center"
               },
               {
                 name: "Ghufran Aziz",
                 role: "Head of Data Solutions",
                 bio: "Expert in prospect research, automation, and high-accuracy email list building.",
-                img: imgTeam2
+                img: imgTeam2,
+                positionClass: "object-center"
               },
               {
                 name: "Rimsha Shamsheer",
                 role: "VP of Client Success",
                 bio: "Ensures our clients receive maximum ROI and dedicated support from our programs.",
-                img: imgTeam3
+                img: imgTeam3,
+                positionClass: "object-center"
               }
             ].map((member, i) => (
               <motion.div 
@@ -322,7 +326,7 @@ export default function Home() {
                   <img 
                     src={member.img} 
                     alt={member.name} 
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                    className={`w-full h-full object-cover ${member.positionClass} group-hover:scale-105 transition-transform duration-500`}
                   />
                   <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 transition-opacity duration-300 mix-blend-overlay" />
                 </div>
