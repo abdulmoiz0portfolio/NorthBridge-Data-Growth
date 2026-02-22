@@ -55,12 +55,29 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid-pattern z-0" />
         <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0" />
         
-        {/* Giant Subtle Background Logo */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-          <Hexagon className="w-[800px] h-[800px] text-primary/[0.03] rotate-12" strokeWidth={0.5} />
-          <div className="absolute font-display font-bold text-[400px] text-primary/[0.02] -rotate-12 select-none">
-            N
-          </div>
+        {/* Subtle Animated Office Images Background */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.07] grayscale mix-blend-multiply">
+          <motion.img 
+            src={officeImg1} 
+            animate={{ x: [-20, 20, -20], y: [-20, 20, -20], rotate: [-2, 2, -2] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[-10%] left-[-5%] w-[400px] md:w-[600px] rounded-3xl object-cover shadow-2xl"
+            alt="" 
+          />
+          <motion.img 
+            src={officeImg2} 
+            animate={{ x: [20, -20, 20], y: [20, -20, 20], rotate: [2, -2, 2] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-[-10%] right-[-5%] w-[500px] md:w-[700px] rounded-3xl object-cover shadow-2xl"
+            alt="" 
+          />
+          <motion.img 
+            src={officeImg3} 
+            animate={{ x: [-30, 30, -30], y: [20, -20, 20], rotate: [-3, 3, -3] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[30%] left-[60%] w-[350px] md:w-[500px] rounded-3xl object-cover shadow-2xl"
+            alt="" 
+          />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
