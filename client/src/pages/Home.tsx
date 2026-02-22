@@ -362,7 +362,7 @@ export default function Home() {
                 role: "Client Success Manager",
                 bio: "Dedicated to driving measurable growth and seamless communication.",
                 img: ayeshaImg,
-                positionClass: "object-[center_15%] scale-[1.6]"
+                positionClass: "object-[center_5%] scale-[2.2]"
               }
             ].map((member, i) => (
               <motion.div 
