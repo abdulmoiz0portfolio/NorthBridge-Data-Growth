@@ -290,7 +290,7 @@ export default function Home() {
               },
               {
                 name: "Muhammad Moeen Baig",
-                role: "Lead Gen Specialist",
+                role: "Owner",
                 bio: "Master of LinkedIn Sales Navigator and crafting personalized outreach campaigns.",
                 img: imgTeam4
               }
