@@ -375,12 +375,14 @@ export default function Home() {
                 data-testid={`card-team-${i}`}
               >
                 <div className="w-40 h-40 rounded-full border-4 border-white/10 overflow-hidden mb-6 relative group-hover:border-white/30 transition-colors">
-                  <img 
-                    src={member.img} 
-                    alt={member.name} 
-                    className={`w-full h-full object-cover ${member.positionClass} group-hover:scale-105 transition-transform duration-500`}
-                  />
-                  <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 transition-opacity duration-300 mix-blend-overlay" />
+                  <div className="w-full h-full transition-transform duration-500 group-hover:scale-105">
+                    <img 
+                      src={member.img} 
+                      alt={member.name} 
+                      className={`w-full h-full object-cover ${member.positionClass}`}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 transition-opacity duration-300 mix-blend-overlay pointer-events-none" />
                 </div>
                 <h3 className="text-xl font-bold font-display text-white mb-1">{member.name}</h3>
                 <p className="text-accent font-medium mb-3">{member.role}</p>
