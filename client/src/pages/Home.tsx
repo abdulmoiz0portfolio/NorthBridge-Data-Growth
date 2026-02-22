@@ -27,6 +27,7 @@ import imgTeam4 from "@assets/WhatsApp_Image_2026-02-21_at_2.36.53_PM_1771770431
 import officeImg1 from "@/assets/images/office-workspace_1.jpg";
 import officeImg2 from "@/assets/images/office-workspace_2.jpg";
 import officeImg3 from "@/assets/images/office-workspace_3.jpg";
+import heroIllustration from "@/assets/images/hero-illustration.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -53,11 +54,12 @@ export default function Home() {
         <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0" />
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeIn}
+              className="text-center lg:text-left"
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-primary font-medium text-sm mb-6 border border-primary/10">
                 <span className="relative flex h-2 w-2">
@@ -66,31 +68,55 @@ export default function Home() {
                 </span>
                 Premium B2B Data Partner
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold font-display text-foreground leading-[1.1] tracking-tight mb-6">
+              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold font-display text-foreground leading-[1.05] tracking-tight mb-6">
                 Accurate Data.<br />
                 Qualified Leads.<br />
-                <span className="text-primary relative inline-block">
+                <span className="text-primary relative inline-block mt-2">
                   Real Growth.
                   <svg className="absolute -bottom-2 w-full h-3 text-accent" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0,5 Q50,10 100,5" stroke="currentColor" strokeWidth="2" fill="none" />
                   </svg>
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 We help businesses scale predictably through meticulously verified leads, targeted prospect research, and expert data solutions.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Button size="lg" className="rounded-full px-8 h-14 text-base shadow-lg shadow-primary/20 group w-full sm:w-auto" asChild>
                   <a href="#contact" data-testid="button-hero-cta">
                     Book a Free Consultation
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base w-full sm:w-auto" asChild>
+                <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base w-full sm:w-auto bg-background/50 backdrop-blur-sm" asChild>
                   <a href="#services" data-testid="button-hero-services">Explore Services</a>
                 </Button>
               </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+              <img 
+                src={heroIllustration} 
+                alt="Data Visualization" 
+                className="w-full max-w-[600px] mx-auto relative z-10 drop-shadow-2xl floating-animation"
+                style={{
+                  animation: 'float 6s ease-in-out infinite'
+                }}
+              />
+              <style>{`
+                @keyframes float {
+                  0% { transform: translateY(0px); }
+                  50% { transform: translateY(-20px); }
+                  100% { transform: translateY(0px); }
+                }
+              `}</style>
             </motion.div>
           </div>
         </div>
