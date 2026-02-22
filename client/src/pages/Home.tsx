@@ -35,6 +35,7 @@ import teamMember2 from "@/assets/images/team-member-2.png";
 import teamMember3 from "@/assets/images/team-member-3.png";
 import teamMember4 from "@/assets/images/team-member-4.png";
 import fatimaImg from "@assets/image_1771776205557.png";
+import ayeshaImg from "@assets/image_1771776449696.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -360,8 +361,8 @@ export default function Home() {
                 name: "Ayesha Malik",
                 role: "Client Success Manager",
                 bio: "Dedicated to driving measurable growth and seamless communication.",
-                img: teamMember4,
-                positionClass: "object-center"
+                img: ayeshaImg,
+                positionClass: "object-[center_15%] scale-[1.6]"
               }
             ].map((member, i) => (
               <motion.div 
