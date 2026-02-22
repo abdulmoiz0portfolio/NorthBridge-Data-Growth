@@ -12,7 +12,8 @@ import {
   Building2,
   Mail,
   Phone,
-  Camera
+  Camera,
+  Hexagon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -53,36 +54,47 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid-pattern z-0" />
         <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0" />
         
+        {/* Giant Subtle Background Logo */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
+          <Hexagon className="w-[800px] h-[800px] text-primary/[0.03] rotate-12" strokeWidth={0.5} />
+          <div className="absolute font-display font-bold text-[400px] text-primary/[0.02] -rotate-12 select-none">
+            N
+          </div>
+        </div>
+
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeIn}
-              className="text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-primary font-medium text-sm mb-6 border border-primary/10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/80 backdrop-blur-sm text-primary font-medium text-sm mb-6 border border-primary/10">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
                 Premium B2B Data Partner
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold font-display text-foreground leading-[1.05] tracking-tight mb-6">
-                Accurate Data.<br />
-                Qualified Leads.<br />
-                <span className="text-primary relative inline-block mt-2">
-                  Real Growth.
-                  <svg className="absolute -bottom-2 w-full h-3 text-accent" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M0,5 Q50,10 100,5" stroke="currentColor" strokeWidth="2" fill="none" />
-                  </svg>
-                </span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              
+              <div className="relative">
+                <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-bold font-display text-foreground leading-[1.05] tracking-tight mb-6 relative z-10">
+                  Accurate Data.<br />
+                  Qualified Leads.<br />
+                  <span className="text-primary relative inline-block mt-2">
+                    Real Growth.
+                    <svg className="absolute -bottom-2 w-full h-3 text-accent" viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <path d="M0,5 Q50,10 100,5" stroke="currentColor" strokeWidth="2" fill="none" />
+                    </svg>
+                  </span>
+                </h1>
+              </div>
+
+              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed relative z-10">
                 We help businesses scale predictably through meticulously verified leads, targeted prospect research, and expert data solutions.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
                 <Button size="lg" className="rounded-full px-8 h-14 text-base shadow-lg shadow-primary/20 group w-full sm:w-auto" asChild>
                   <a href="#contact" data-testid="button-hero-cta">
                     Book a Free Consultation
@@ -93,30 +105,6 @@ export default function Home() {
                   <a href="#services" data-testid="button-hero-services">Explore Services</a>
                 </Button>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: 20 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-              <img 
-                src={heroIllustration} 
-                alt="Data Visualization" 
-                className="w-full max-w-[600px] mx-auto relative z-10 drop-shadow-2xl floating-animation"
-                style={{
-                  animation: 'float 6s ease-in-out infinite'
-                }}
-              />
-              <style>{`
-                @keyframes float {
-                  0% { transform: translateY(0px); }
-                  50% { transform: translateY(-20px); }
-                  100% { transform: translateY(0px); }
-                }
-              `}</style>
             </motion.div>
           </div>
         </div>
