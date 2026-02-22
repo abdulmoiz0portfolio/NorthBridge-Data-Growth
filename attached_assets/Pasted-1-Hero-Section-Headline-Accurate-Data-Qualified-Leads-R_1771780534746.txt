@@ -1,0 +1,153 @@
+1. Hero Section
+
+Headline:
+“Accurate Data. Qualified Leads. Real Growth.”
+
+Short intro:
+NorthBridge Data Solutions helps businesses scale through targeted lead generation, LinkedIn prospecting, verified email databases, and professional data support services.
+
+Call To Action Button:
+“Book a Free Consultation”
+
+2. Services Section
+
+Create a detailed services section divided into categories with card layout.
+
+Lead Generation & Prospect Research
+
+B2B Lead Generation
+
+B2C Lead Generation
+
+Prospect Research
+
+Contact List Building
+
+Email List Building
+
+Email Verification
+
+Mailing Lists & Sales Lead Lists
+
+Custom Prospect Lists
+
+Lead Scoring
+
+Lead Nurturing
+
+Database Creation
+
+LinkedIn Services
+
+LinkedIn Lead Generation
+
+LinkedIn Sales Navigator Expert
+
+LinkedIn Recruiting Support
+
+LinkedIn Data Mining
+
+Profile Optimization
+
+Outreach Automation
+
+Decision Maker Targeting
+
+Email Marketing Services
+
+B2B Email Marketing
+
+B2C Email Marketing
+
+Campaign Setup
+
+Deliverability Optimization
+
+Data Entry & Virtual Assistance
+
+Virtual Assistant Services
+
+Web Research
+
+Internet Research
+
+Data Mining
+
+Data Collection
+
+Data Cleansing
+
+Manual Data Entry
+
+PDF to Excel / Word Conversion
+
+CRM Data Entry & Management
+
+E-commerce Product Data Entry
+
+Online Store Uploading
+
+Directory Data Entry
+
+De-duplication & Accuracy Checks
+
+Administrative Support
+
+3. Tools Expertise Section
+
+Show these tools in a clean grid format:
+
+ZoomInfo
+Crunchbase
+Apollo
+Hunter
+NeverBounce
+EmailListVerify
+Hoovers
+Manta
+Owler
+AngelList
+
+4. Team Section
+
+Create a modern team section with:
+
+Circular profile images
+
+Name
+
+Designation
+
+Short bio
+
+Easy image replacement
+
+5. Why Choose Us Section
+
+Show in clean grid layout:
+
+High-quality, error-free data
+
+Verified and up-to-date leads
+
+Fast turnaround
+
+Clear communication
+
+High returning client ratio
+
+Long-term client support
+
+6. Contact Section
+
+Include:
+
+Editable phone number
+
+Email address
+
+Contact form
+
+Footer with company name and social icons
+
+Make the layout modern and unique, not basic template style.

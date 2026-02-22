@@ -149,7 +149,7 @@ export default function Home() {
           </div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -161,15 +161,20 @@ export default function Home() {
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary relative z-10">
                 <Target className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold font-display mb-3 relative z-10">Lead Generation</h3>
+              <h3 className="text-xl font-bold font-display mb-3 relative z-10">1. Lead Generation & Prospect Research</h3>
               <p className="text-muted-foreground mb-6 relative z-10">
-                Strategic B2B & B2C lead generation, detailed prospect research, and comprehensive email list building & verification to ensure high deliverability.
+                Strategic B2B & B2C lead generation, advanced prospect research, and verified email database building to deliver high-quality, conversion-ready leads.
               </p>
               <ul className="space-y-2 mb-6">
-                {['B2B & B2C Campaigns', 'Email Verification', 'Custom Prospect Lists'].map((item, i) => (
-                  <li key={i} className="flex items-center text-sm font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-primary mr-2" />
-                    {item}
+                {[
+                  'B2B Lead Generation', 'B2C Lead Generation', 'Prospect Research', 
+                  'Contact List Building', 'Email List Building', 'Email Verification',
+                  'Mailing Lists & Sales Lead Lists', 'Custom Prospect Lists',
+                  'Lead Scoring', 'Lead Nurturing', 'Database Creation'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-0.5 shrink-0" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -181,15 +186,20 @@ export default function Home() {
               <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 text-accent relative z-10">
                 <Users className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold font-display mb-3 relative z-10">LinkedIn Services</h3>
+              <h3 className="text-xl font-bold font-display mb-3 relative z-10">2. LinkedIn Lead Generation & Marketing</h3>
               <p className="text-muted-foreground mb-6 relative z-10">
-                Mastering LinkedIn Sales Navigator to identify key decision-makers, craft personalized outreach, and build meaningful B2B connections.
+                Professional LinkedIn prospecting using Sales Navigator to identify decision-makers, optimize profiles, and execute personalized outreach campaigns.
               </p>
               <ul className="space-y-2 mb-6">
-                {['Sales Navigator Mastery', 'Profile Optimization', 'Outreach Automation'].map((item, i) => (
-                  <li key={i} className="flex items-center text-sm font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-accent mr-2" />
-                    {item}
+                {[
+                  'LinkedIn Lead Generation', 'LinkedIn Sales Navigator Expert', 
+                  'LinkedIn Recruiting Support', 'LinkedIn Data Mining', 
+                  'Profile Optimization', 'Outreach Automation', 
+                  'Decision Maker Targeting', 'B2B LinkedIn Marketing Campaigns'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-accent mr-2 mt-0.5 shrink-0" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -199,22 +209,81 @@ export default function Home() {
             <motion.div variants={fadeIn} className="bg-card rounded-3xl p-8 shadow-sm border border-border/50 hover:shadow-md transition-all group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110" />
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary relative z-10">
-                <Keyboard className="w-7 h-7" />
+                <Mail className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold font-display mb-3 relative z-10">Data Entry & VA</h3>
+              <h3 className="text-xl font-bold font-display mb-3 relative z-10">3. Email Marketing Services</h3>
               <p className="text-muted-foreground mb-6 relative z-10">
-                Reliable data entry and dedicated virtual assistance services to handle your administrative operations so you can focus on closing deals.
+                Targeted and deliverability-focused email campaigns designed to convert prospects into qualified leads.
               </p>
               <ul className="space-y-2 mb-6">
-                {['CRM Management', 'Data Cleansing', 'Administrative Support'].map((item, i) => (
-                  <li key={i} className="flex items-center text-sm font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-primary mr-2" />
-                    {item}
+                {[
+                  'B2B Email Marketing', 'B2C Email Marketing', 
+                  'Campaign Setup & Management', 'Cold Email Outreach', 
+                  'Deliverability Optimization', 'List Segmentation', 
+                  'Performance Tracking'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-0.5 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Service 4 */}
+            <motion.div variants={fadeIn} className="bg-card rounded-3xl p-8 shadow-sm border border-border/50 hover:shadow-md transition-all group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110" />
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 text-accent relative z-10">
+                <Keyboard className="w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-bold font-display mb-3 relative z-10">4. Data Entry & Virtual Assistance</h3>
+              <p className="text-muted-foreground mb-6 relative z-10">
+                Reliable data entry and virtual assistance solutions designed to support daily operations, maintain accurate records, and improve workflow efficiency.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  'Virtual Assistant Services', 'Web & Internet Research', 
+                  'Data Mining & Data Collection', 'Data Cleansing', 
+                  'Manual Data Entry (Text & Numeric)', 'PDF to Excel / Word Conversion', 
+                  'CRM Data Entry & Management', 'E-commerce Product Data Entry', 
+                  'Online Store Uploading', 'Directory Data Entry', 
+                  'De-duplication & Accuracy Checks', 'Administrative Support'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-accent mr-2 mt-0.5 shrink-0" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* TOOLS & PLATFORMS */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">Tools & Platforms We Use</h2>
+            <p className="text-lg text-muted-foreground">
+              We leverage industry-leading data and prospecting tools to ensure accurate targeting, verified contact information, and high-performing outreach campaigns.
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {[
+              'ZoomInfo', 'Crunchbase', 'Apollo', 'Hunter', 'NeverBounce', 
+              'EmailListVerify', 'Hoovers', 'Manta', 'Owler', 'AngelList', 
+              'LinkedIn Sales Navigator', 'Clearbit', 'Lusha', 'RocketReach', 'Snov.io'
+            ].map((tool, i) => (
+              <div 
+                key={i} 
+                className="px-6 py-3 bg-secondary/80 hover:bg-primary/10 border border-border/50 rounded-full text-foreground font-medium transition-colors hover:border-primary/30 cursor-default shadow-sm"
+              >
+                {tool}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
