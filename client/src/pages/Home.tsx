@@ -30,6 +30,10 @@ import officeImg1 from "@assets/Screenshot_2026-02-22_201649_1771773446554.png";
 import officeImg2 from "@assets/Screenshot_2026-02-22_201916_1771773756968.png";
 import officeImg3 from "@assets/Screenshot_2026-02-22_202208_1771773756969.png";
 import heroIllustration from "@/assets/images/hero-illustration.png";
+import teamMember1 from "@/assets/images/team-member-1.png";
+import teamMember2 from "@/assets/images/team-member-2.png";
+import teamMember3 from "@/assets/images/team-member-3.png";
+import teamMember4 from "@/assets/images/team-member-4.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -321,13 +325,41 @@ export default function Home() {
                 role: "Head of Data Solutions",
                 bio: "Expert in prospect research, automation, and high-accuracy email list building.",
                 img: imgTeam2,
-                positionClass: "object-center"
+                positionClass: "object-[center_20%] scale-[1.5]"
               },
               {
                 name: "Rimsha Shamsheer",
                 role: "VP of Client Success",
                 bio: "Ensures our clients receive maximum ROI and dedicated support from our programs.",
                 img: imgTeam3,
+                positionClass: "object-center"
+              },
+              {
+                name: "Tariq Mahmood",
+                role: "Lead Generation Specialist",
+                bio: "Specializes in B2B outbound strategies and highly targeted lead lists.",
+                img: teamMember1,
+                positionClass: "object-center"
+              },
+              {
+                name: "Fatima Khan",
+                role: "LinkedIn Strategist",
+                bio: "Expert in Social Selling and LinkedIn Sales Navigator optimization.",
+                img: teamMember2,
+                positionClass: "object-center"
+              },
+              {
+                name: "Bilal Ahmed",
+                role: "Data Analyst",
+                bio: "Ensures 95%+ data accuracy through rigorous verification protocols.",
+                img: teamMember3,
+                positionClass: "object-center"
+              },
+              {
+                name: "Ayesha Malik",
+                role: "Client Success Manager",
+                bio: "Dedicated to driving measurable growth and seamless communication.",
+                img: teamMember4,
                 positionClass: "object-center"
               }
             ].map((member, i) => (
