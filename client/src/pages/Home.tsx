@@ -15,8 +15,10 @@ import {
   Phone,
   Camera,
   Hexagon,
-  MapPin
+  MapPin,
+  Loader2
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -102,6 +104,123 @@ function Counter() {
   }, []);
 
   return <span>{count.toLocaleString()}</span>;
+}
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit");
+      }
+
+      setIsSubmitted(true);
+      setFormData({ firstName: "", lastName: "", email: "", company: "", message: "" });
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="bg-card rounded-[2rem] p-8 md:p-10 shadow-xl border border-border/50 flex flex-col items-center justify-center text-center min-h-[400px]">
+        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+          <CheckCircle2 className="w-8 h-8 text-green-600" />
+        </div>
+        <h3 className="text-2xl font-bold font-display mb-3">Thank You!</h3>
+        <p className="text-muted-foreground mb-6 max-w-sm">
+          Your message has been received. Our team will review your requirements and get back to you within 24 hours.
+        </p>
+        <Button onClick={() => setIsSubmitted(false)} variant="outline" className="rounded-xl" data-testid="button-send-another">
+          Send Another Message
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-card rounded-[2rem] p-8 md:p-10 shadow-xl border border-border/50">
+      <h3 className="text-2xl font-bold font-display mb-6">Send us a message</h3>
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label htmlFor="first-name">First Name</Label>
+            <Input id="first-name" placeholder="John" className="h-12 bg-secondary/50" required value={formData.firstName} onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))} data-testid="input-first-name" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="last-name">Last Name</Label>
+            <Input id="last-name" placeholder="Doe" className="h-12 bg-secondary/50" required value={formData.lastName} onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))} data-testid="input-last-name" />
+          </div>
+        </div>
+        
+        <div className="space-y-2">
+          <Label htmlFor="email">Work Email</Label>
+          <Input id="email" type="email" placeholder="john@company.com" className="h-12 bg-secondary/50" required value={formData.email} onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))} data-testid="input-email" />
+        </div>
+        
+        <div className="space-y-2">
+          <Label htmlFor="company">Company Name</Label>
+          <Input id="company" placeholder="Acme Corp" className="h-12 bg-secondary/50" required value={formData.company} onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))} data-testid="input-company" />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="message">How can we help?</Label>
+          <Textarea 
+            id="message" 
+            placeholder="Tell us about your lead generation goals..." 
+            className="min-h-[120px] bg-secondary/50 resize-none"
+            required
+            value={formData.message}
+            onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+            data-testid="input-message"
+          />
+        </div>
+
+        <Button type="submit" className="w-full h-12 text-base rounded-xl" disabled={isSubmitting} data-testid="button-submit-contact">
+          {isSubmitting ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              Send Message
+              <MessageSquare className="w-4 h-4 ml-2" />
+            </>
+          )}
+        </Button>
+      </form>
+    </div>
+  );
 }
 
 export default function Home() {
@@ -634,45 +753,7 @@ export default function Home() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-card rounded-[2rem] p-8 md:p-10 shadow-xl border border-border/50">
-              <h3 className="text-2xl font-bold font-display mb-6">Send us a message</h3>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="first-name">First Name</Label>
-                    <Input id="first-name" placeholder="John" className="h-12 bg-secondary/50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="last-name">Last Name</Label>
-                    <Input id="last-name" placeholder="Doe" className="h-12 bg-secondary/50" />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="email">Work Email</Label>
-                  <Input id="email" type="email" placeholder="john@company.com" className="h-12 bg-secondary/50" />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="company">Company Name</Label>
-                  <Input id="company" placeholder="Acme Corp" className="h-12 bg-secondary/50" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">How can we help?</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your lead generation goals..." 
-                    className="min-h-[120px] bg-secondary/50 resize-none"
-                  />
-                </div>
-
-                <Button type="submit" className="w-full h-12 text-base rounded-xl" data-testid="button-submit-contact">
-                  Send Message
-                  <MessageSquare className="w-4 h-4 ml-2" />
-                </Button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
