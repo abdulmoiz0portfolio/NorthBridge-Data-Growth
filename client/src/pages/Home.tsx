@@ -57,30 +57,32 @@ const staggerContainer = {
   }
 };
 
-function Counter({ target }: { target: number }) {
-  const [count, setCount] = useState(0);
+function Counter() {
+  const [count, setCount] = useState(200000);
 
   useEffect(() => {
     let startTime: number | null = null;
     let lastTick = 0;
-    let currentCount = 0;
+    let currentCount = 200000;
     let animationFrameId: number;
-    const duration = 2500; // 2.5 seconds
+    const duration = 2000; // 2 seconds to drop to 150k
+    const target = 150000;
 
     const animateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
       
       if (elapsed < duration) {
-        // easeOutQuart for smooth deceleration
+        // Drop from 200,000 to 150,000
         const progress = elapsed / duration;
+        // easeOutQuart
         const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-        currentCount = Math.floor(easeOutQuart * target);
+        currentCount = Math.floor(200000 - ((200000 - target) * easeOutQuart));
         setCount(currentCount);
       } else {
-        // Continuous fast counter after reaching the target
-        if (timestamp - lastTick > 30) { // Every 30ms
-          currentCount += Math.floor(Math.random() * 12) + 3; // Add 3-14
+        // Continuous live counter going UP from 150,000
+        if (timestamp - lastTick > 40) { // Every 40ms
+          currentCount += Math.floor(Math.random() * 8) + 2; // Add 2-9
           setCount(currentCount);
           lastTick = timestamp;
         }
@@ -89,7 +91,6 @@ function Counter({ target }: { target: number }) {
       animationFrameId = requestAnimationFrame(animateCount);
     };
     
-    // Start animation slightly delayed so it's visible when scrolled to
     const timeout = setTimeout(() => {
       animationFrameId = requestAnimationFrame(animateCount);
     }, 500);
@@ -98,7 +99,7 @@ function Counter({ target }: { target: number }) {
       clearTimeout(timeout);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-  }, [target]);
+  }, []);
 
   return <span>{count.toLocaleString()}</span>;
 }
@@ -388,7 +389,7 @@ export default function Home() {
                       <div>
                         <div className="text-sm font-medium text-muted-foreground mb-1">Total Leads Verified</div>
                         <div className="text-4xl font-bold font-display tracking-tight flex items-baseline">
-                          <Counter target={124592} />+
+                          <Counter />+
                         </div>
                         <div className="text-sm font-medium text-foreground mt-2">
                           Successfully Researched, Cleaned & Delivered Across Multiple Industries

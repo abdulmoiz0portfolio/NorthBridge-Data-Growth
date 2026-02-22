@@ -54,7 +54,7 @@ export default function Navbar() {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-bold text-foreground/80 hover:text-primary transition-colors inline-block"
+                className="text-base font-bold text-foreground hover:text-primary transition-colors inline-block"
                 data-testid={`link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
